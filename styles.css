@@ -1,0 +1,115 @@
+body {
+    font-family: "Verdana", sans-serif; 
+    background-color: #ECECEC; 
+    margin: 0;
+    padding: 100px;
+  }
+  
+  .resume-container {
+    display: flex;
+    background-color: #FFFFFF; 
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);;
+  }
+  
+  .left-section {
+    background-color: #2F2F2F; 
+    color: #F8F8F8; 
+    padding: 20px;
+    width: 35%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 5px solid #B0BEC5; 
+  }
+  
+  .profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #B0BEC5; 
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease
+    }
+  .profile-picture:hover{
+    transform: scale(1.05);
+
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin: 10px 0;
+    text-align: center;
+    color: #2F2F2F; 
+    padding-bottom: 10px;
+  }
+  h3 {
+    font-size: 18px;
+    padding: 10px;
+    margin: 20px 0 10px;
+    color: #2F2F2F; 
+    background-color: #B0BEC5;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(176, 190, 197, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+
+ 
+  ul {
+    list-style-type: disc; 
+    padding: 10px;
+    margin: 10px 0;
+  }
+  
+  ul li {
+    margin: 5px 0;
+    color: #4A4A4A; 
+    font-family: "Verdana", sans-serif; 
+  }
+  
+  .right-section {
+    padding: 20px;
+    width: 65%;
+    background-color: #F9FAFB; 
+  }
+  
+  button {
+    font-family: "Verdana", sans-serif; 
+    background-color: #B0BEC5; 
+    color: #2F2F2F; 
+    border-radius: 20px;
+    box-shadow: 0 5px 15px  rgba(176, 190, 197, 0.2);
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #90A4AE; 
+    transform: scale(1.05); 
+  }
+  h3:hover {
+    background-color: #90A4AE; 
+    transform: scale(1.05);
+  }
+
+  .right-section-heading {
+    margin:auto;
+    padding-left :20px;
+  }
+ 
+  p{
+    font-size: small;
+    line-height:20px
+  }
+  .remove-decoration{
+    text-decoration: none;
+    color:black;
+  }
