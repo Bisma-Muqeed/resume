@@ -1,51 +1,60 @@
-// get refrences to the form and display
+// Get references to the form and display elements
+const form = document.getElementById("resume-form") as HTMLFormElement;
+const resumeDisplayElement = document.getElementById("resume-display") as HTMLDivElement;
 
-const form =document.getElementById("resume-form") as HTMLFormElement
+// Function to initialize dynamic updates
+function initializeDynamicResume() {
+   
+    if (!form || !resumeDisplayElement) {
+        console.error("Form or Resume Display Element is missing.");
+        return;
+    }
 
+    
+    const inputs = form.querySelectorAll("input, textarea");
 
-const resumeDisplayElement =document.getElementById("resume-display") as HTMLDivElement
+    inputs.forEach((input) => {
+        const field = input.getAttribute("id"); 
+        if (field) {
+            input.addEventListener("input", () => {
+                const targetElement = resumeDisplayElement.querySelector(`[data-field="${field}"]`);
+                if (targetElement) {
+                    if (input instanceof HTMLInputElement || input instanceof HTMLTextAreaElement) {
+                        targetElement.textContent = input.value.trim();
+                    }
+                }
+            });
+        }
+    });
 
-// form submission
-form.addEventListener("submit", (event:Event) => {
-    event.preventDefault(); 
     
-    // input values
-    const name =(document.getElementById("name") as HTMLInputElement).value
-    
-    const email =(document.getElementById("email") as HTMLInputElement).value
-    
-    const contact =(document.getElementById("contact") as HTMLInputElement).value
-    
-    const education =(document.getElementById("education") as HTMLInputElement).value
-    
-    const experience =(document.getElementById("experience") as HTMLInputElement).value
-    
-    const skills =(document.getElementById("skills") as HTMLInputElement).value
-
-
-    // generate resume
-    const resumeHTML = `
-    <h2><strong>Resume</strong></h2>
-    <h3>Personal Information</h3>
-    <p><strong>Name</strong>  ${ name}</p>
-    <p><strong>Email</strong>  ${ email}</p>
-    <p><strong>Contact</strong>  ${ contact}</p>
-    
-    <h3>Education</h3>
-    <p>${education}</p>
-    
-    <h3>Experience</h3>
-    <p>${experience}</p>
-    
-    <h3>Skills</h3>
-    <p>${skills}</p>`
-
-//display generated resume
- if(resumeDisplayElement){
-    resumeDisplayElement.innerHTML= resumeHTML;
- }
-else{
-    console.error("The Resume Display Element is Missing");
+    generateInitialResume();
 }
 
-});
+
+function generateInitialResume() {
+    const initialHTML = `
+    <h2><strong>Resume</strong></h2>
+    <h3>Personal Information</h3>
+    <p><strong>Name</strong>: <span data-field="name"></span></p>
+    <p><strong>Email</strong>: <span data-field="email"></span></p>
+    <p><strong>Contact</strong>: <span data-field="contact"></span></p>
+    
+    <h3>Education</h3>
+    <p data-field="education"></p>
+    
+    <h3>Experience</h3>
+    <p data-field="experience"></p>
+    
+    <h3>Skills</h3>
+    <p data-field="skills"></p>`;
+
+   
+    if (resumeDisplayElement) {
+        resumeDisplayElement.innerHTML = initialHTML;
+    }
+}
+
+// Initialize dynamic updates
+initializeDynamicResume();
+

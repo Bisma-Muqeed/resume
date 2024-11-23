@@ -64,7 +64,6 @@ input, textarea {
 }
 input:focus, textarea:focus {
     border-color: #3498db; 
-    outline: none;
     box-shadow: 0 0 6px rgba(52, 152, 219, 0.5); 
 }
 button {
