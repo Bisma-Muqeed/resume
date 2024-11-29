@@ -21,20 +21,20 @@ form.addEventListener('submit',(event :Event) =>  {
     const resumeHTML = `
     <h2><strong>Resume</strong></h2>
     <h3>Personal Information</h3>
-    <p><strong>Name</strong>${name}</p>
-    <p><strong>Email</strong>${email}</p>
-    <p><strong>Contact</strong>${contact}</p>
+    <p><strong>Name</strong><span contenteditable = "true">${name}</span></p>
+    <p><strong>Email</strong><span contenteditable = "true">${email}</span></p>
+    <p><strong>Contact</strong><span contenteditable = "true">${contact}</span></p>
 
 
     <h3>Education</h3>
-    <p>${education}</p>
+    <p><span contenteditable = "true">${education}</span></p>
 
     <h3>Experience</h3>
-    <p>${experience}</p>
+    <p><span contenteditable = "true">${experience}</span></p>
 
 
     <h3>Skills</h3>
-    <p>${skills}</p>
+    <p><span contenteditable = "true">${skills}</span></p>
     `;
     
     // Display the generated resume
